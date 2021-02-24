@@ -24,7 +24,7 @@ In this practical we compare several convolutional neural network (CNN) architec
 ### Baseline Model
 <img src="images/baseline cnn loss.png" width="300"> <img src="images/baseline cnn accuracy.png" width="300"><br/>
 
-### VGG Net
+### VGG Net Model
 <img src="images/VGGnet loss.png" width="300" > <img src="images/vggnet accuracy.png" width="300" ><br/>
 
 - These are preliminary results to determine suitable number of epochs for the model. For a full description of the results of all architectures and hyperparameters tested in this project, refer to the report. 
@@ -34,5 +34,5 @@ In this practical we compare several convolutional neural network (CNN) architec
 - [Lars Cordes](https://github.com/L-Cordes)
 
 ## Reference
-For this project, CIFAR-10 data set was used. We refer to the author's paper for more details: 
--Alex Krizhevsky.  Learning multiple layers of features from tiny images.University of Toronto, 052012
+For this project, CIFAR-10 data set was used. We refer to the author's paper for more details:<br/>
+- Alex Krizhevsky.  Learning multiple layers of features from tiny images.University of Toronto, 05/2012
