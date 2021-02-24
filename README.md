@@ -22,12 +22,12 @@ In this practical we compare several convolutional neural network (CNN) architec
 
 ## Results
 ### Baseline Model
-<img src="images/baseline cnn loss.png" width="700"><br/>
-<img src="images/baseline cnn accuracy.png" width="700"><br/>
+<img src="images/baseline cnn loss.png" width="300"><br/>
+<img src="images/baseline cnn accuracy.png" width="300"><br/>
 
 ### VGG Net
-<img src="images/VGGnet loss.png" width="700" ><br/>
-<img src="images/vggnet accuracy.png" width="700" ><br/>
+<img src="images/VGGnet loss.png" width="300" ><br/>
+<img src="images/vggnet accuracy.png" width="300" ><br/>
 
 - These are preliminary results to determine suitable number of epochs for the model. For a full description of the results of all architectures and hyperparameters tested in this project, refer to the report. 
 
