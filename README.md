@@ -15,9 +15,14 @@ In this practical we compare several convolutional neural network (CNN) architec
 <img src="images/VGG net architecture.png" width="700"><br/>
 
 ## How to run the python files
-- Install Python from [python.org](https://www.python.org/)
+- Install Python 3.8.5 from [python.org](https://www.python.org/)
 - `python -m pip install --upgrade pip`
 - `pip install -r requirements.txt`
+
+## File Desciptions
+- `(model name).py` contains function for creating the respective model
+- `(model name) experiments.py` trains and evaluates (on a test set), the model architecture using different regularization and optimizaiton strategies
+- `experiment for number of epochs.py` trains the model using early stopping to get a suitable number of iterations and plots the training history
 
 
 ## Results

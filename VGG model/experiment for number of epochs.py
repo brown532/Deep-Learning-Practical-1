@@ -1,4 +1,3 @@
-
 from vggmodel import *
 from keras.callbacks import EarlyStopping
 from matplotlib import pyplot

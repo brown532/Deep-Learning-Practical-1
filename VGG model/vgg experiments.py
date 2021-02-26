@@ -21,13 +21,15 @@ train_epochs = 10
 
 	Exp 2: With drop out & weight decay-> l2(0.01)
 
-	Exp 3: with drop out & weight decay activation: leaky relu
+    Exp 3: with drop out, weight decay & batch norm
 
-	Exp 4: with drop out & weight decay activation: sigmoid
+	Exp 4: with drop out & weight decay activation: leaky relu
 
-	Exp 5: with drop out & weight decay activation: relu, optimizer: sgd
+	Exp 5: with drop out & weight decay activation: sigmoid
 
-	Exp 6: with drop out & weight decay activation: relu, optimizer: sgd with momentum 
+	Exp 6: with drop out & weight decay activation: relu, optimizer: sgd
+
+	Exp 7: with drop out & weight decay activation: relu, optimizer: sgd with momentum 
 '''
 
 
@@ -54,7 +56,7 @@ print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx\nXXXXXXXXXXXXXXXXXXXXXX
 
 
 
-#Model 2: with drop out
+#Model 2: with drop out & weight decay
 VGG_model = create_vgg_model(drop_out=True,weight_decay=True,activation='relu')
 print("\n\nModel 2:")
 # #train model on training set
@@ -64,9 +66,8 @@ print("Model 2: \tTest loss: "+str(test_loss)+"\tTest accuracy: "+str(test_acc)+
 print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
 
 
-
-#Model 3: with drop out,weight decay, leaky relu
-VGG_model = create_vgg_model(drop_out=True,weight_decay=True,activation='lrelu')
+#Model 3: with drop out, weight decay batch norm
+VGG_model = create_vgg_model(drop_out=True,weight_decay=True,batch_normalization=True,activation='relu')
 print("\n\nModel 3:")
 # #train model on training set
 VGG_model.fit(train_images, train_labels, batch_size=32, epochs=train_epochs,verbose=1)
@@ -75,8 +76,9 @@ print("Model 3: \tTest loss: "+str(test_loss)+"\tTest accuracy: "+str(test_acc)+
 print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
 
 
-#Model 4: with drop out,weight decay, sigmoid
-VGG_model = create_vgg_model(drop_out=True,weight_decay=True,activation='sigmoid')
+
+#Model 4: with drop out,weight decay, leaky relu
+VGG_model = create_vgg_model(drop_out=True,weight_decay=True,batch_normalization=True,activation='lrelu')
 print("\n\nModel 4:")
 # #train model on training set
 VGG_model.fit(train_images, train_labels, batch_size=32, epochs=train_epochs,verbose=1)
@@ -85,8 +87,8 @@ print("Model 4: \tTest loss: "+str(test_loss)+"\tTest accuracy: "+str(test_acc)+
 print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
 
 
-#Model 5: with drop out,weight decay, relu, SGD
-VGG_model = create_vgg_model(drop_out=True,weight_decay=True,activation='relu',optimizer='sgd')
+#Model 5: with drop out,weight decay, sigmoid
+VGG_model = create_vgg_model(drop_out=True,weight_decay=True,batch_normalization=True,activation='sigmoid')
 print("\n\nModel 5:")
 # #train model on training set
 VGG_model.fit(train_images, train_labels, batch_size=32, epochs=train_epochs,verbose=1)
@@ -95,12 +97,22 @@ print("Model 5: \tTest loss: "+str(test_loss)+"\tTest accuracy: "+str(test_acc)+
 print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
 
 
-#Model 6: with drop out,weight decay, relu, SGD with momentum
-VGG_model = create_vgg_model(drop_out=True,weight_decay=True,activation='relu',optimizer='sgd with momentum')
+#Model 6: with drop out,weight decay, relu, SGD
+VGG_model = create_vgg_model(drop_out=True,weight_decay=True,batch_normalization=True,activation='relu',optimizer='sgd')
 print("\n\nModel 6:")
 # #train model on training set
 VGG_model.fit(train_images, train_labels, batch_size=32, epochs=train_epochs,verbose=1)
 test_loss, test_acc = VGG_model.evaluate(test_images, test_labels,verbose=2)
 print("Model 6: \tTest loss: "+str(test_loss)+"\tTest accuracy: "+str(test_acc)+"\n\n")
+print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+
+
+#Model 7: with drop out,weight decay, relu, SGD with momentum
+VGG_model = create_vgg_model(drop_out=True,weight_decay=True,batch_normalization=True,activation='relu',optimizer='sgd with momentum')
+print("\n\nModel 7:")
+# #train model on training set
+VGG_model.fit(train_images, train_labels, batch_size=32, epochs=train_epochs,verbose=1)
+test_loss, test_acc = VGG_model.evaluate(test_images, test_labels,verbose=2)
+print("Model 7: \tTest loss: "+str(test_loss)+"\tTest accuracy: "+str(test_acc)+"\n\n")
 print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
 
