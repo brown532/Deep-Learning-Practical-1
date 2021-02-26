@@ -20,7 +20,7 @@ In this practical we compare several convolutional neural network (CNN) architec
 - `pip install -r requirements.txt`
 - `python (file name).py`
 
-## File Desciptions
+## File Description
 - `(model name).py` contains function for creating the respective model
 - `(model name) experiments.py` trains and evaluates (on a test set), the model architecture using different regularization and optimizaiton strategies
 - `experiment for number of epochs.py` trains the model using early stopping to get a suitable number of iterations and plots the training history
