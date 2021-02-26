@@ -18,6 +18,7 @@ In this practical we compare several convolutional neural network (CNN) architec
 - Install Python 3.8.5 from [python.org](https://www.python.org/)
 - `python -m pip install --upgrade pip`
 - `pip install -r requirements.txt`
+- `python (file name).py`
 
 ## File Desciptions
 - `(model name).py` contains function for creating the respective model
